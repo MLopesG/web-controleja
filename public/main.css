@@ -8,6 +8,7 @@
 }
 
 html,body{
+    background: #fdfdfd;
     height: 100%;
 }
 
@@ -35,7 +36,7 @@ html,body{
     margin-top: 1rem;
 }
 
-.input-container-btn input[type='button']{
+.input-container-btn input[type='submit']{
     background-color: var(--main-color);
     padding: .7rem;
     color:#fff;

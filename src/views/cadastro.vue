@@ -21,7 +21,7 @@
                         <input type="password" id="confirmarsenha" name="confirmarsenha">
                     </div>
                     <div class="input-container-btn">
-                        <input type="button" value="Cadastra-se">
+                        <input type="submit" value="Cadastra-se">
                     </div>
                 </form>
             </div>
