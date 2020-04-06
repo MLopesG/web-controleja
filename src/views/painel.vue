@@ -51,7 +51,7 @@
             </div>
             <div class="extrato">
                 <div class="titulo-container">
-                    <h1>Extrato</h1>
+                    <h1>Entradas/Saidas - Mensal</h1>
                 </div>
                 <div class="item-extratos">
                    <div class="item">
@@ -67,7 +67,63 @@
                        <div class="body-item">
                            <span>R$ 50,00</span>
                        </div>
+                   </div>    
+                   <div class="item">
+                       <div class="header-item">
+                           <div class="header-img">
+                              <img src="https://image.flaticon.com/icons/svg/1924/1924289.svg">
+                           </div>
+                           <div class="header-desc">
+                               <span>Padaria</span>
+                               <span>Comida</span>
+                           </div>
+                       </div>
+                       <div class="body-item">
+                           <span>R$ 50,00</span>
+                       </div>
+                   </div>    
+                   <div class="item">
+                       <div class="header-item">
+                           <div class="header-img">
+                              <img src="https://image.flaticon.com/icons/svg/1924/1924289.svg">
+                           </div>
+                           <div class="header-desc">
+                               <span>Padaria</span>
+                               <span>Comida</span>
+                           </div>
+                       </div>
+                       <div class="body-item">
+                           <span>R$ 50,00</span>
+                       </div>
+                   </div>    
+                   <div class="item">
+                       <div class="header-item">
+                           <div class="header-img">
+                              <img src="https://image.flaticon.com/icons/svg/1924/1924289.svg">
+                           </div>
+                           <div class="header-desc">
+                               <span>Padaria</span>
+                               <span>Comida</span>
+                           </div>
+                       </div>
+                       <div class="body-item">
+                           <span>R$ 50,00</span>
+                       </div>
                    </div>     
+                   <div class="item">
+                       <div class="header-item">
+                           <div class="header-img">
+                              <img src="https://image.flaticon.com/icons/svg/1924/1924289.svg">
+                           </div>
+                           <div class="header-desc">
+                               <span>Padaria</span>
+                               <span>Comida</span>
+                           </div>
+                       </div>
+                       <div class="body-item">
+                           <span>R$ 50,00</span>
+                       </div>
+                   </div>    
                 </div>
             </div>
         </div>

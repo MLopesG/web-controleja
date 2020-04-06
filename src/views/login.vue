@@ -1,30 +1,34 @@
 <template id='login'>
-   <div class="container-login">
-       <div class="login">
-            <div class="header">
-                <div class="img">
-                    <img src="../assets/logo.png" alt="logo">
+   <div class='container-login'>
+       <div class='login'>
+            <div class='header'>
+                <div class='img'>
+                    <img src='../assets/logo.png' alt='logo'>
                 </div>
             </div>
-            <div class="body">
-                <form @submit.prevent="logar()">
-                    <div class="input-container">
-                        <label for="usuario">Usuário:</label>
-                        <input type="text" id="usuario" name="usuario" v-model="usuario">
+            <div class='body'>
+                <form @submit.prevent='logar()'>
+                    <div class='input-container'>
+                        <label for='usuario'>Usuário:</label>
+                        <input type='text' id='usuario' name='usuario' v-model='usuario'>
                     </div>
-                    <div class="input-container">
-                        <label for="senha">Senha:</label>
-                        <input type="password" id="senha" name="senha" v-model="senha">
+                    <div class='input-container'>
+                        <label for='senha'>Senha:</label>
+                        <input type='password' id='senha' name='senha' v-model='senha'>
                     </div>
-                    <div class="input-container-btn">
-                        <input type="submit" value="Entrar">
+                    <div class='input-container-btn'>
+                        <input type='submit' value='Entrar'>
                     </div>
-                    <div class="container-link">
-                        <a href="/cadastre-se">Cadastre-se</a>
+                    <div class='container-link'>
+                        <a href='/cadastre-se'>Cadastre-se</a>
                     </div>
                 </form>
             </div>
-            <notifications group="notify" />
+            <div :class="!alert ? 'alert false' : 'alert true'" v-if='hidden' >
+                <div>
+                    <p>{{message}}</p>
+                </div>
+            </div>
         </div>
    </div>
 </template>
@@ -38,7 +42,11 @@ export default {
     data(){
         return{
             usuario: null,
-            senha: null
+            senha: null,
+            alert: false,
+            // message
+            hidden: false,
+            message: ''
         }
     },
     methods:{
@@ -47,9 +55,31 @@ export default {
                 login:  this.usuario,
                 senha: this.senha
             }).then(res=>{
-                 
-            }).catch(()=>{
-                
+                 if(res.data.autenticado){
+                    this.message = 'Aguarde o redirecionamento para o painel';
+                    this.alert = true;
+                    this.hidden = true;
+
+                    let redirect = setInterval(()=>{
+                        localStorage.setItem('token', res.data.token);
+                        window.location.href = '/painel';
+                        clearInterval(redirect);
+                    },2000);
+                 }
+            }).catch((res)=>{
+                if(res.response.data && res.response.data.senha  && res.response.data.login){
+                    this.message = 'Por favor, preencha todos os campos';
+                    this.hidden = true;
+                }else{
+                    if(res.response.data && res.response.data.login){
+                        this.message = 'Por favor, preencha o campo usuário';
+                        this.hidden = true;
+                    }
+                    if(res.response.data && res.response.data.senha){
+                        this.message = 'Por favor, preencha o campo senha';
+                        this.hidden = true;
+                    }
+                }
             });
         }
     }
