@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-let token = localStorage.getItem('token')
+let token = localStorage.getItem('token');
 
 const instance = axios.create({
   baseURL:'http://api-finac.herokuapp.com',
