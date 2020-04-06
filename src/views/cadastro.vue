@@ -6,6 +6,11 @@
                     <img src='../assets/logo.png' alt='logo'>
                 </div>
             </div>
+            <div :class="!alert ? 'alert false' : 'alert true'" v-if='hidden' >
+                <div>
+                    <p>{{message}}</p>
+                </div>
+            </div>
             <div class='body'>
                 <form @submit.prevent='logar()'>
                     <div class='input-container'>
@@ -24,11 +29,6 @@
                         <input type='submit' value='Cadastre-se'>
                     </div>
                 </form>
-            </div>
-            <div :class="!alert ? 'alert false' : 'alert true'" v-if='hidden' >
-                <div>
-                    <p>{{message}}</p>
-                </div>
             </div>
         </div>
    </div>

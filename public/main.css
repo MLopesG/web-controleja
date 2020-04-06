@@ -75,7 +75,7 @@ html,body{
     justify-content: center;
     background: var(--main-color);
 
-    box-shadow: 1px 1px 1px 1px #eeddee;
+    box-shadow: 1px 1px 1px 1px #c1b8c1;
 }
 
 .body{
@@ -99,31 +99,35 @@ html,body{
 .header-menu{
     display: flex;
     justify-content: flex-start;
-    padding:1.2rem;
+    padding:1.3rem;
 }
 
-.img-logo h1{
-    font-size: 1rem;
+.header-menu .logo h1{
+    font-size: 1.2rem;
     color: #fff;
+    font-weight: bold;
     padding-left: 10px;
 }
 
 .container-dados{
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
 }
 
 .content-finan{
     background: #fff;
     box-shadow: 1px 1px 1px 1px #dededf;
-    padding: 15px 10px;
-    width: 30vw;
+    width: 100%;
+    height: 10vh;
 }
+
 
 .titulo{
     display: flex;
     align-items: center;
     margin: 10px;
+    font-weight: bold;
 }
 
 .valor{
@@ -138,12 +142,17 @@ html,body{
 }
 
 .receitas{
-    background: rgb(25, 193, 25);
+    background:green;
     color: #fff;
 }
 
 .saldo{
     background: var(--main-color);
+    color: #fff;
+}
+
+.total{
+    background:  rgb(238, 163, 24);
     color: #fff;
 }
 
@@ -171,7 +180,7 @@ html,body{
     align-items: center;
     justify-content: space-between;
     background: #fff;
-    box-shadow: 1px 1px 1px 1px #dededf;
+    box-shadow: 1px 1px 1px 1px #d5d5dc;
 
     padding: 20px 20px;
     margin-bottom: 1rem;
@@ -193,9 +202,16 @@ html,body{
 }
 
 .body-item span{
-    color: #e60000;
     font-weight: bold;
     font-size: 1rem;
+}
+
+.a{
+    color: green;
+}
+
+.b{
+    color: red;
 }
 
 .alert{
@@ -214,6 +230,43 @@ html,body{
 }
 
 .false{
-    background: rgb(213, 20, 20);
+    background: rgb(241, 15, 15);
     color:#fff;
+}
+
+.warning{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 50vh;
+
+    text-align: center;
+}
+
+.warning img{
+    max-width: 10rem;
+}
+
+.warning h1{
+    color: #d8c9d8;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.warning h2{
+    color: #d8c9d8;
+    font-size: 1rem;
+}
+
+@media screen and (min-width:620px){
+    .container-dados{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .content-finan{
+        padding: 15px 10px;
+    }
 }

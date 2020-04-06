@@ -6,6 +6,11 @@
                     <img src='../assets/logo.png' alt='logo'>
                 </div>
             </div>
+            <div :class="!alert ? 'alert false' : 'alert true'" v-if='hidden' >
+                <div>
+                    <p>{{message}}</p>
+                </div>
+            </div>
             <div class='body'>
                 <form @submit.prevent='logar()'>
                     <div class='input-container'>
@@ -23,11 +28,6 @@
                         <a href='/cadastre-se'>Cadastre-se</a>
                     </div>
                 </form>
-            </div>
-            <div :class="!alert ? 'alert false' : 'alert true'" v-if='hidden' >
-                <div>
-                    <p>{{message}}</p>
-                </div>
             </div>
         </div>
    </div>
@@ -65,6 +65,9 @@ export default {
                         window.location.href = '/painel';
                         clearInterval(redirect);
                     },2000);
+                 }else{
+                    this.message = 'Usuário/ou senha inválido(s)';
+                    this.hidden = true;
                  }
             }).catch((res)=>{
                 if(res.response.data && res.response.data.senha  && res.response.data.login){
