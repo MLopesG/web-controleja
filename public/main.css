@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+}
+
+html,body{
+    height: 100%;
+}
+
+:root{
+    --main-color: #2a2a83;
+}
+
+.input-container,
+.input-container-btn{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container label{
+    padding: 10px 0px;
+}
+
+.input-container input{
+    border-radius: 4px;
+    padding: .5rem;
+    border: 1px solid #dddddd;
+}
+
+.input-container-btn{
+    margin-top: 1rem;
+}
+
+.input-container-btn input[type='button']{
+    background-color: var(--main-color);
+    padding: .7rem;
+    color:#fff;
+    border: none;
+    border-radius: 4px;
+}
+
+.login{
+    box-shadow: 1px 1px 1px 1px #ecebeb; 
+    width:28vw;
+    background: #fff;
+}
+
+.container-login{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+    height: 100vh;
+}
+
+.header .img{
+    padding: 40px 20px;
+}
+
+.header .img img{
+    max-width: 12rem;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-color);
+
+    box-shadow: 1px 1px 1px 1px #eeddee;
+}
+
+.body{
+    padding: 50px 20px;
+}
+
+.body-sub{
+    padding:20px 20px;
+}
+
+.container-link{
+    padding: 20px 20px;
+    text-align: center;
+}
+
+.container-link a{
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.header-menu{
+    display: flex;
+    justify-content: flex-start;
+    padding:1.2rem;
+}
+
+.img-logo h1{
+    font-size: 1rem;
+    color: #fff;
+    padding-left: 10px;
+}
+
+.container-dados{
+    display: flex;
+    justify-content: space-around;
+}
+
+.content-finan{
+    background: #fff;
+    box-shadow: 1px 1px 1px 1px #ededee;
+    padding: 15px 10px;
+    width: 30vw;
+}
+
+.titulo{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.valor{
+    float: right;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.despesas{
+    background: #e60000;
+    color: #fff;
+}
+
+.receitas{
+    background: rgb(20, 169, 20);
+    color: #fff;
+}
+
+.saldo{
+    background: var(--main-color);
+    color: #fff;
+}
+
+.titulo i{
+    font-size: 1.5rem;
+}
+
+.titulo span{
+    padding-left: 10px;
+}
+
+.extrato{
+    padding: 10px 10px;
+}
+
+.titulo-container h1{
+    font-size: 1.4rem;
+    line-height: 3rem;
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    box-shadow: 1px 1px 1px 1px #ededee;
+
+    padding: 20px 20px;
+    margin-bottom: 1rem;
+}
+
+.header-item {
+    display: flex;
+}
+
+.header-item img{
+    max-width: 2rem;
+}
+
+.header-desc{
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.body-item span{
+    color: #e60000;
+    font-weight: bold;
+    font-size: 1rem;
+}
