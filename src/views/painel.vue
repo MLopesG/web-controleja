@@ -8,6 +8,26 @@
            </div>
         </div>
         <div class="body-sub">
+            <div class="vindas">
+               <div>
+                    <div>
+                        <h1>{{usuario()}}</h1>
+                    </div>
+                    <div>
+                        <p>Administre suas contas (Receitas, despesas, saldo e total).</p>
+                    </div>
+               </div>
+                <div>
+                    <button @click="atualizar()">
+                        <i class="fa fa-refresh"></i>
+                        Atualizar Métricas
+                    </button>
+                    <button @click="sair()">
+                        <i class="fa fa-sign-out"></i>
+                       Finalizar sessão 
+                    </button>
+                </div>
+            </div>
             <div class="container-dados">
                 <div class="content-finan saldo">
                     <div class="titulo">
@@ -120,6 +140,16 @@ export default {
         getFinanceiro(){
             axios.get('/movimentacoes/202003').then((conta)=>{
                 this.contas = conta.data;
+            }).catch(error=>{
+                if(error.response.status === 401 || error.response.status === 400 ){
+                     let redirect = setInterval(()=>{
+                        localStorage.clear();
+                        window.location.href = '/';
+                        clearInterval(redirect);
+                    },2000);
+
+                    return;
+                }
             });
 
             axios.get('/movimentacoes/total/202003').then((dados)=>{
@@ -131,6 +161,24 @@ export default {
         },
         format(real){
             return formatCurrency(real);
+        },
+        usuario(){
+            return localStorage.getItem('usuario')
+        },
+        atualizar(){
+            this.contas = [];
+            this.dados = {
+                totalReceitas:0.00,
+                totalDespesas:0.00,
+                total:0.00,
+                saldo:0.00
+            };
+
+            this.getFinanceiro();
+        },
+        sair(){
+            localStorage.clear();
+            this.$router.go();
         }
     },
     created(){

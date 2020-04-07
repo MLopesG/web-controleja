@@ -56,12 +56,13 @@ export default {
                 senha: this.senha
             }).then(res=>{
                  if(res.data.autenticado){
-                    this.message = 'Aguarde o redirecionamento para o painel';
+                    this.message = 'Cadastro encontrado, aguarde o redirecionamento para o painel de contas';
                     this.alert = true;
                     this.hidden = true;
 
                     let redirect = setInterval(()=>{
                         localStorage.setItem('token', res.data.token);
+                        localStorage.setItem('usuario', res.data.usuario);
                         window.location.href = '/painel';
                         clearInterval(redirect);
                     },2000);

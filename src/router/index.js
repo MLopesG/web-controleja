@@ -5,7 +5,17 @@ import login from '../views/login.vue';
 import cadastro from '../views/cadastro.vue';
 import painel from '../views/painel.vue';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
+
+
+const auth = async (to, from, next) => {
+  let token = localStorage.getItem('token');
+
+  if (!token) {
+    return next('/');
+  }
+  next();
+};
 
 const routes = [
   {
@@ -21,14 +31,15 @@ const routes = [
   {
     path: '/painel',
     name: 'Controle Já',
-    component: painel
+    component: painel,
+    beforeEnter: auth
   }
-]
+];
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
-})
+});
 
 export default router
