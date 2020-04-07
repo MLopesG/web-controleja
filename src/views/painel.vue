@@ -105,7 +105,7 @@
                 <div v-else>
                     <div class="warning">
                         <div>
-                            <img src="https://scoreplan.com.br/wp-content/uploads/2020/01/warning.png" alt="">
+                             <img src="../assets/warning.png" alt="">
                         </div>
                         <div>
                            <h1>Oops ...</h1>
