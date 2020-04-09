@@ -243,13 +243,12 @@ export default {
             axios.get('/movimentacoes/' + data).then((conta)=>{
                 this.contas = conta.data;
             }).catch(error=>{
-                if(error.response.status === 401 || error.response.status === 400 ){
+                if(error.response.status >= 401  ){
                      let redirect = setInterval(()=>{
                         localStorage.clear();
                         window.location.href = '/';
                         clearInterval(redirect);
                     },2000);
-
                     return;
                 }
             });
@@ -318,7 +317,7 @@ export default {
         },
         sair(){
             localStorage.clear();
-            this.$router.go();
+            this.$router.push({ path: '/' });
         }
     },
     created(){

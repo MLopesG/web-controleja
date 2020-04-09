@@ -16,7 +16,7 @@ html,body{
 }
 
 :root{
-    --main-color: #2a2a83;
+    --main-color: #4a4a90;
 }
 
 .input-container,
@@ -29,7 +29,7 @@ html,body{
     padding: 10px 0px;
 }
 
-.input-container input{
+.input-container input,select{
     border-radius: 4px;
     padding: .5rem;
     border: 1px solid #c9c9c9;
@@ -83,7 +83,7 @@ html,body{
 }
 
 .body-sub{
-    padding:20px 20px;
+    padding:10px 10px;
 }
 
 .container-link{
@@ -118,22 +118,35 @@ html,body{
 .content-finan{
     background: #fff;
     box-shadow: 1px 1px 1px 1px #dededf;
-    height: 10vh;
+    height: 15vh;
     padding: 10px 15px;
+}
+
+.content-finan .titulo{
+    margin-bottom: 1rem;
 }
 
 
 .titulo{
     display: flex;
     align-items: center;
-    margin: 10px;
     font-weight: bold;
 }
 
 .valor{
-    float: right;
+    justify-content: space-between;
     font-weight: bold;
-    font-size: 1.4rem;
+    align-items: center;
+    font-size: 1.2rem;
+    display: flex;
+}
+
+.valor input{
+    width: 200px;
+}
+
+.valor i{
+    display: none;
 }
 
 .despesas{
@@ -166,6 +179,10 @@ html,body{
 
 .extrato{
     padding: 10px 10px;
+}
+
+.titulo-container{
+    display: flex;
 }
 
 .titulo-container h1{
@@ -277,12 +294,55 @@ html,body{
     background: var(--main-color);
     border: none;
     color: #fff;
-    padding: 12px 20px;
+    padding: 12px 14px;
     font-weight: bold;
     cursor: pointer;
+    margin-left: 5px;
 }
 
-@media screen and (min-width:620px){
+.add-movimentacao{
+    padding: 20px 20px;
+}
+
+.add-movimentacao-titulo{
+    background-color: var(--main-color);
+    padding: 20px 20px;
+}
+
+.add-movimentacao-titulo h1{
+    font-size: 1rem;
+    color:#fff;
+    font-weight: bold;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 2rem;
+}
+
+.btn-group button{
+    width: 80vw;
+}
+
+.saldo-content{
+    display: flex;
+    align-items: center;
+}
+
+
+@media screen and (min-width:720px){
+
+    .btn-group{
+        flex-direction: row;
+        margin-top: unset;
+    }
+
+    .btn-group button{
+        width: auto;
+    }
+
     .vindas{
         flex-direction: row;
         align-items: inherit;
@@ -295,10 +355,18 @@ html,body{
 
     .content-finan{
         width: 100%;
-        padding: 15px 10px;
+        padding: 25px 20px;
+        height: 10vh;
+    }
+
+    .content-finan input{
+        border-radius: unset;
     }
 
     .login{
-        width:28vw;
+        width:26vw;
+    }
+    .body-sub{
+        padding:15px 15px;
     }
 }
