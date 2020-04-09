@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.4e759c7830f82dcd888f0f604e44e803.js"
+  "/precache-manifest.576d89df9942441e8bebc92dbfc476a2.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "controleja-web"});

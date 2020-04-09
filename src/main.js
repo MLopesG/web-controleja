@@ -3,7 +3,9 @@ import App from './App.vue'
 
 import './registerServiceWorker'
 import router from './router'
+import modal from 'vue-js-modal';
 
+Vue.use(modal);
 Vue.config.productionTip = false;
 
 
