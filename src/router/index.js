@@ -10,8 +10,9 @@ Vue.use(VueRouter);
 
 const auth = async (to, from, next) => {
   let token = localStorage.getItem('token');
+  let usuario = localStorage.getItem('usuario');
 
-  if (!token) {
+  if (!token && usuario === null) {
     return next('/');
   }
   next();
