@@ -16,7 +16,7 @@ html,body{
 }
 
 :root{
-    --main-color: #4a4a90;
+    --main-color: #4b5fcf;
 }
 
 .input-container,
@@ -50,6 +50,7 @@ html,body{
 .login{
     box-shadow: 1px 1px 1px 1px #ecebeb; 
     width:90%;
+    display: f;
     background: #fff;
 }
 
@@ -99,7 +100,7 @@ html,body{
 .header-menu{
     display: flex;
     justify-content: flex-start;
-    padding:1.3rem;
+    padding:1.2rem;
 }
 
 .header-menu .logo h1{
@@ -118,8 +119,9 @@ html,body{
 .content-finan{
     background: #fff;
     box-shadow: 1px 1px 1px 1px #dededf;
-    height: 15vh;
+    height: 13vh;
     padding: 10px 15px;
+    
 }
 
 .content-finan .titulo{
@@ -294,10 +296,14 @@ html,body{
     background: var(--main-color);
     border: none;
     color: #fff;
-    padding: 12px 14px;
+    padding: 10px 12px;
+    border-radius: 4px;
     font-weight: bold;
     cursor: pointer;
     margin-left: 5px;
+    margin-bottom: 10px;
+    font-size: .8rem;
+    box-shadow: 1px 1px 1px 1px #dededf;
 }
 
 .add-movimentacao{
@@ -341,6 +347,7 @@ html,body{
 
     .btn-group button{
         width: auto;
+        margin-bottom: unset;
     }
 
     .vindas{
@@ -355,7 +362,7 @@ html,body{
 
     .content-finan{
         width: 100%;
-        padding: 25px 20px;
+        padding: 20px 20px;
         height: 10vh;
     }
 
@@ -369,4 +376,5 @@ html,body{
     .body-sub{
         padding:15px 15px;
     }
+    
 }

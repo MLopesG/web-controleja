@@ -55,7 +55,7 @@ export default {
                 login:  this.usuario,
                 senha: this.senha
             }).then(res=>{
-                 if(res.data.autenticado){
+                 if(res.data.autenticado && res.data.token != null && res.data.usuario != null){
                     this.message =  res.data.usuario;
                     this.alert = true;
                     this.hidden = true;
@@ -80,10 +80,14 @@ export default {
                     if(res.response.data && res.response.data.login){
                         this.message = 'Por favor, preencha o campo usuário';
                         this.hidden = true;
-                    }
-                    if(res.response.data && res.response.data.senha){
-                        this.message = 'Por favor, preencha o campo senha';
-                        this.hidden = true;
+                    }else{
+                        if(res.response.data && res.response.data.senha){
+                            this.message = 'Por favor, preencha o campo senha';
+                            this.hidden = true;
+                        }else{
+                            this.message = 'Usuário/ou senha inválido(s)';
+                            this.hidden = true;
+                        }
                     }
                 }
             });
