@@ -18,9 +18,9 @@
     "vue2-datepicker": "^3.4.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-pwa": "~4.3.0",
+    "@vue/cli-plugin-pwa": "~5.0.8",
     "@vue/cli-plugin-router": "~4.3.0",
-    "@vue/cli-service": "~4.3.0",
+    "@vue/cli-service": "~5.0.8",
     "vue-template-compiler": "^2.6.11"
   },
   "browserslist": [
